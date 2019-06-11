@@ -2,5 +2,5 @@
 
 echo "Provisioning infrastructure..."
 cd /scripts
-terraform init
-terraform plan
+#terraform init
+#terraform plan
