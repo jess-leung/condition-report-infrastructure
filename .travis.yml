@@ -1,19 +1,16 @@
-sudo: required
 services:
   - docker
 
 env:
-  COMPOSE_VERSION: 1.24.0
   global:
     - secure: ehyVL3VyhV/47FIacD/z7TnukFNMaQW5nj0uUYHycV3PPC621U9EAFrIFyQlAliVzFg8sq5r/qr1oLwB8A9cETjgB8LmpCjSsuD0YzoLOJYRLaBRUZJqYz4k9xEp2WP2LBRvWhoX+u1GtrIZxrpSdWQQxzWYvOhBMWkKQ2I+9rQrN5bDmE9SaMeG/zqnUdGErSATeU4140fBK+NoPYC3ag+TFtlfSThWe8HpvU4UJGgSCmRGgBFYq2NuetqePXgAjGsMU6iN2Zx7YpP2ukh4uncdazq9Ts5tWcV3hNb8Jq/6Pqv9l0X1ZX4NybqB4yk5WZhqwNYYmqMKRETQ7RBwHN9dsVM7OoB5KKp49vxhB3uN0tGAOGBX8m/z1JNBB5ui1NMeGrtD1lX+kaNTXyzUwlgyidkPmEofH+Tj1jFrMJH3NqBf/7HMba32oHr3VeyOaqZ0fhT+VzYXVdUQV8O8OotjVtvbja+zPKx+wYkYzrgb1sg4c3pzL2ihhUW6oqTmxMP5Arqy1aAf2Kcxyuv0mBOJoYRcnXaU3oE1pNWGlHgLW0Oe2jsaCg2Cuj8RO3bxDDBwBsJtsSoa5/QoIgs6urH/0BW0wN6EnGusZqFFq0hDrO+TC8U2ptXFJt9T0MIYrkvLPi8er2k4T63rMPg0KwFb1d6a4BDt9W17628RGXY=
     - secure: HoVzJOoL4QsHuQCoi66SyysY4gtToOCVuwahXqTEsGLTz3OIYqcpAKRCPemEqJKyAYi0UWL4MwKWpyGgjp9n+YgfkjHxyzeNS9sxgzvfLxvi3Mc9LQxVUkCGiMyJY++BfRrAJyfe1xze+6rQsFlPMnm8KeygIEkLAC+RzEmDloFb4kX3+JYUmBLztgAzU3Wlk8TMklhmvWlRfgsle2GKLc/54qjVYAkqGTTPn9w6a2oCcdPfmt/9BKJUjvLQAdzdPzZ2OermyNnjkJki4LDAL1MX1pV9ZmQed6KLtCgpbVhU68TRxYjhbJIJjMuvnDHTekybat/drv24fOBh99Key2SsPMPFycSKVSomvjUsgCxNYTgx1R0Q59lJauAq24oze7zYnqnVOeIHSa5SpR51HyfVCmfgy0mc3WVyBrUHIlFAeuQEd44h6TU0HHu5ClnZWmIKNfPQa8Sl4ln0bPpbdogO3CqXOHpwrbB37DFZB/bldb/iFkKls1IKkYqPr4XDSP+zyCDNr1Jq3u8U7DsftrAu6yQehOukaqgBEaJ8eeSm/yMdvmNS/JymirRT1UK2woD6UVLa65LnoQN/t6TVikTtzwGU1ggfMUi8cgjySq/Jfva7ZGoGG3QHR3l2BuyUSM99Gorrnh+UIyk6NNLRwGvYJcD5etVRhKxzB4FWxRo=
+  COMPOSE_VERSION: 1.24.0
 
 before_install:
-  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname
-    -s`-`uname -m` > docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
-  - ls /usr/local/bin
 
 script:
   - docker-compose up
