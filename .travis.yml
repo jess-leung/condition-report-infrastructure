@@ -1,3 +1,4 @@
+language: generic
 services:
 - docker
 env:
@@ -6,4 +7,4 @@ env:
   - secure: jysGSDczFUHQhdPbrCxQA7ZACOGeGqrCSF+B0CbF1RDBGqiDyTDgcFzNPn1UfY2b7JR50JlVfa2w8jVJBZnt+9RY4PzJk7k9rCsBRrAchK+0/1apyIeV9P75f/JdylsfnLzRqa2ky/Ehgd6tHnTjKuPDd3pA1GFJAhZcdQNJF8tQER6ZOkYNyQmYa2/33Fwfy0Rh0SASqXxliUJgXyZknHB0Bh4FVzjm7IG1ThpFDAO8cmZF4YzG0NYuuHT1T3UXQsSR8QUrH6xEih3Ej0bWviAe/VHI/xsyeRTnIvathlN6eMdZsqkwGFK8w+8jGyqtx9SKDyky3f6F5EzmCSlufTx0gZlolwpy6tflPnta5rq48tMSvLwpSOAHSNnlGWhf6+mMBK0TUthULfp3+cqoFuWfoAVDx4wcmnzqIIJctQBPzl9o0X1zTlfmYd/tDOdHaEW6k9tMrg0X2uStKMWHH90e8ZmnagdmKii9ZJJRmjKYy0l8ZWJsld98tpHbsyDHruCfUDbqI182fn7dT3/K0sA/N+jDhCmwFZQP4Ds/vFFq4AYA28SOe0NvSKaCvWTzvl51oTH8Ej+q3TL9mcXt9Yn4LeHiVe9qBTyoKKVoZVniXfGdJtqPhGthQ4nAHRT5s/ox+DgT2GbJpxt/RYeEZaczLSG6Fi1XDkNOaH7NJ9A=
 script:
 - docker build -t jessleung/condition-report-infra:latest .
-- docker run jessleung/condition-report-infra:latest
+- docker run -e $AWS_ACCESS_KEY_ID -e $AWS_SECRET_ACCESS_KEY jessleung/condition-report-infra:latest
