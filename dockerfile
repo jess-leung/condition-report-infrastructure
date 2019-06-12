@@ -1,7 +1,6 @@
-FROM hashicorp/terraform:light
+FROM marcelocorreia/terraform
 WORKDIR /infra
 COPY . /infra
 RUN ["ls"]
-RUN ["terraform", "init"]
-RUN ["terraform", "plan"]
-RUN ["terraform", "apply"]
+RUN ["./create-aws-credentials-file.sh"]
+ENTRYPOINT ["./provision-infrastructure.sh"]
