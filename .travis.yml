@@ -11,5 +11,5 @@ before_install:
 - chmod +x docker-compose
 - sudo mv docker-compose /usr/local/bin
 script:
-- docker-compose build
-- docker-compose run -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+- docker-compose up -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY
+- docker ps
