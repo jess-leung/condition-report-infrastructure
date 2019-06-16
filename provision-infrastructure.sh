@@ -2,6 +2,13 @@
 
 echo "Storing credentials..."
 
+if [ -z "$AWS_ACCESS_KEY_ID" ]
+then
+      echo "\$var is empty"
+else
+      echo "\$var is NOT empty"
+fi
+
 #mkdir -p /.aws
 #
 #echo "[default]" >> /.aws/credentials
