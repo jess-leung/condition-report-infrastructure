@@ -22,7 +22,7 @@ resource "aws_route" "internet_access" {
 # Create a subnet for the ELB & EC2 intances
 resource "aws_subnet" "default" {
   vpc_id                  = "${aws_vpc.default.id}"
-  availability_zone       = "eu-west-1a"
+  availability_zone       = "ap-southeast-2a"
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = true
 
